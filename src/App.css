@@ -75,6 +75,7 @@ height:auto}
   border:1px solid rgba(0, 0, 0, 0.342);
   border-radius: 20px;
   cursor:pointer;
+  padding: 3rem;
   
 }
 
@@ -86,7 +87,6 @@ height:auto}
 .card img{
   width: 100%;
   height: auto;
-  z-index: -1;
 }
 
 .buttons, .description{
@@ -104,3 +104,50 @@ height:auto}
   background-color: red;
 }
 
+/*Details*/
+.product_details_container{
+  display: flex;
+  flex-direction: column;
+  font-size:  clamp(2rem, 2.5vw, 3rem );  
+
+}
+
+.product{
+  display: flex;
+  flex-direction: row;
+  gap: clamp(2rem, 10vw, 30rem );
+}
+
+.product_description{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 2.5vh, 3rem );
+  padding: 2rem;
+
+}
+
+.amount{
+  display: flex;
+  flex-direction: row;
+  gap: clamp(2rem, 10vw, 30rem );
+}
+
+ .navbuttons{
+  display: flex;
+  gap:  clamp(2rem, 2.5vh, 3rem );
+  justify-content: center;
+
+  
+}
+
+ .navbuttons *{
+border:1px solid rgba(0, 0, 0, 0.342);
+padding: 1rem;
+border-radius: 10px;
+font-size:  clamp(2rem, 2.5vw, 3rem );  
+
+}
+
+.pay{
+  background-color:green;
+}

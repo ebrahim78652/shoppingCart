@@ -4,7 +4,6 @@ import { Header } from "../shared/Header";
 export const Homepage = () => {
   return (
     <>
-      <Header />
       <main className="videoAndHeading">
         <video autoPlay loop muted>
           <source src="/video.mp4" type="video/mp4" />
