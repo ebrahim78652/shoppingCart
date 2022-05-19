@@ -3,7 +3,7 @@ import { Header } from "../shared/Header";
 import { ProductDetails } from "../shared/ProductDetails";
 import { useNavigate } from "react-router-dom";
 
-export const Details = () => {
+export const Details = (props) => {
   const navigate = useNavigate();
 
   const onContinueClick = () => {
@@ -16,7 +16,7 @@ export const Details = () => {
 
   return (
     <>
-      <ProductDetails />
+      <ProductDetails currentSelectedPlant={props.currentSelectedPlant} />
       <div className="navbuttons">
         <div onClick={onContinueClick} className="continue">
           Continue Shopping

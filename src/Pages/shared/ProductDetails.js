@@ -1,20 +1,39 @@
 import React from "react";
 
-export const ProductDetails = () => {
+export const ProductDetails = ({ currentSelectedPlant }) => {
   return (
     <>
       <div className="product_details_container">
         <div className="product">
           <img src="/images/image1.webp" alt="" />
           <div className="product_description">
-            <p className="name">Pink flower</p>
-            <p className="price">100$</p>
+            <p className="name">
+              {currentSelectedPlant.name ? currentSelectedPlant.name : null}
+            </p>
+            <p className="price">{currentSelectedPlant.price}</p>
+            <p className="description">{currentSelectedPlant.description}</p>
             <p className="amount">
               Amount
               <div className="buttons">
-                <div className="decrement">-</div>
-                <div className="amount">0</div>
-                <div className="increment">+</div>
+                <div
+                  onClick={() => {
+                    currentSelectedPlant.decrement();
+                  }}
+                  className="decrement"
+                >
+                  -
+                </div>
+                <div className="amount">
+                  {currentSelectedPlant.quantity.getAmount()}
+                </div>
+                <div
+                  onClick={() => {
+                    currentSelectedPlant.increment();
+                  }}
+                  className="increment"
+                >
+                  +
+                </div>
               </div>
             </p>
           </div>

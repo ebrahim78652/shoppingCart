@@ -59,9 +59,12 @@ height:auto}
 
 .cards_container{
   display: grid;
-  gap:1rem;
+  
   grid-template-columns: repeat( auto-fit , minmax(34rem, 1fr));
   padding: clamp(1rem, 1.5vw, 1.5rem);
+  justify-items: center;
+  gap: 3rem;
+
 }
 
 
@@ -77,6 +80,7 @@ height:auto}
   cursor:pointer;
   padding: 3rem;
   
+  
 }
 
 .card:hover{ 
@@ -91,9 +95,16 @@ height:auto}
 
 .buttons, .description{
   display: flex;
+
   justify-content: center;
   gap: 1rem;
 
+}
+
+.description{
+  flex-direction:column;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .increment{

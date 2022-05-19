@@ -10,6 +10,7 @@ export const Shop = ({
   decrement,
   incrementInStore,
   decrementInStore,
+  flowerSelectedByUser,
 }) => {
   return (
     <>
@@ -40,6 +41,7 @@ export const Shop = ({
                 decrementInStore(image.id);
               }}
               imageUrl={image.imageUrl}
+              flowerSelectedByUser={flowerSelectedByUser}
             />
           );
         })}

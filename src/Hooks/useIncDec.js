@@ -33,21 +33,18 @@ export const useIncDec = (numIncrementers) => {
   };
 
   const decrement = (id) => {
-    setArrIncDecInfo((prevQuantity) => {
-      let updatedArr = prevQuantity.map((incrementer) => {
-        if (incrementer.id === id) {
-          if (!incrementer.getAmount() <= 0) {
-            incrementer.decrementAmount();
-            console.log(incrementer.getAmount());
-            return incrementer;
-          }
+    let updatedArrIncDecInfo = arrIncDecInfo.map((incrementer) => {
+      if (incrementer.id === id) {
+        if (!incrementer.getAmount() <= 0) {
+          incrementer.decrementAmount();
+          console.log(incrementer.getAmount());
+          return incrementer;
         }
-        return incrementer;
-      });
-
-      console.log(updatedArr[0].getAmount());
-      return updatedArr;
+      }
+      return incrementer;
     });
+
+    setArrIncDecInfo(updatedArrIncDecInfo);
   };
 
   return [increment, arrIncDecInfo, decrement];

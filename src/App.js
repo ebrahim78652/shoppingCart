@@ -8,10 +8,12 @@ import { Header } from "./Pages/shared/Header";
 
 import { useIncDec } from "./Hooks/useIncDec";
 import { useImages } from "./Hooks/useImages";
+import { useDetails } from "./Hooks/useDetail";
 
 function App() {
   const [allImagesInfo, incrementInStore, decrementInStore] = useImages();
-  const [increment, arrIncDecInfo, decrement] = useIncDec(1);
+  const [increment, arrIncDecInfo, decrement] = useIncDec(allImagesInfo.length);
+  const [currentSelectedPlant, flowerSelectedByUser] = useDetails();
 
   return (
     <>
@@ -30,11 +32,15 @@ function App() {
               decrement={decrement}
               incrementInStore={incrementInStore}
               decrementInStore={decrementInStore}
+              flowerSelectedByUser={flowerSelectedByUser}
             />
           }
         ></Route>
         <Route path="checkout" element={<Checkout />}></Route>
-        <Route path="details" element={<Details />}></Route>
+        <Route
+          path="details"
+          element={<Details currentSelectedPlant={currentSelectedPlant} />}
+        ></Route>
       </Routes>
     </>
   );

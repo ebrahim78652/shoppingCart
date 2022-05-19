@@ -11,11 +11,21 @@ export const Card = ({
   incrementInStore,
   decrementInStore,
   imageUrl,
+  flowerSelectedByUser,
 }) => {
   const navigate = useNavigate();
 
   const onPictureClick = () => {
     console.log("picture clicked");
+    flowerSelectedByUser({
+      name: name,
+      price: price,
+      description: description,
+      imageUrl: imageUrl,
+      increment: increment,
+      decrement: decrement,
+      quantity: quantity,
+    });
     navigate("/details");
   };
 
