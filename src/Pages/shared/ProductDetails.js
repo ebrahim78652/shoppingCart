@@ -10,7 +10,7 @@ export const ProductDetails = ({ currentSelectedPlant }) => {
             <p className="name">
               <b>Name:</b>
               {"    "}
-              {currentSelectedPlant.name ? currentSelectedPlant.name : null}
+              {currentSelectedPlant.name}
             </p>
             <p className="price">
               <b>Price:</b> £{currentSelectedPlant.price}

@@ -154,11 +154,6 @@ export const useImages = () => {
     setAllImagesInfo(updatedAllImagesInfo);
   };
 
-  //delete this effect later.
-  useEffect(() => {
-    console.log(allImagesInfo[0].getAmountToBuy());
-  }, [allImagesInfo]);
-
   const decrementInStore = (idOfImageToUpdate) => {
     const updatedAllImagesInfo = allImagesInfo.map((imageInfo) => {
       if (imageInfo.id === idOfImageToUpdate) {

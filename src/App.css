@@ -144,6 +144,7 @@ ul{
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 /*Details*/
@@ -178,7 +179,7 @@ ul{
   display: flex;
   gap:  clamp(2rem, 2.5vh, 3rem );
   justify-content: center;
-
+  
   
 }
 
@@ -186,7 +187,8 @@ ul{
 border:1px solid rgba(0, 0, 0, 0.342);
 padding: 1rem;
 border-radius: 10px;
-font-size:  clamp(2rem, 2.5vw, 3rem );  
+font-size:  clamp(2rem, 2.5vw, 3rem ); 
+cursor: pointer; 
 
 }
 
