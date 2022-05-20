@@ -19,22 +19,34 @@ export const Checkout = ({ getProducts, getTotal }) => {
     navigate("/home");
   };
 
+  //conditional rendering
   return (
     <>
-      {products.map((product) => (
-        <ProductDetails key={product.id} currentSelectedPlant={product} />
-      ))}
-
-      <div className="totalPrice">Total Price: {totalPrice}</div>
-
-      <div className="navbuttons">
-        <div onClick={onContinueClick} className="continue">
-          Continue Shopping
+      {products.length > 0 && (
+        <div>
+          {products.map((product) => (
+            <ProductDetails key={product.id} currentSelectedPlant={product} />
+          ))}
+          <div className="totalPrice">Total Price: {totalPrice}</div>
+          <div className="navbuttons">
+            <div onClick={onContinueClick} className="continue">
+              Continue Shopping
+            </div>
+            <div onClick={onPayClick} className="pay">
+              Pay
+            </div>
+          </div>
         </div>
-        <div onClick={onPayClick} className="pay">
-          Pay
+      )}
+
+      {products.length === 0 && (
+        <div className="picAndHeading">
+          <img className="empty_cart" src="/images/empty-cart.jpg" alt="" />
+          <div className="heading">
+            <div>Sorry! The Cart Is Empty!</div>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

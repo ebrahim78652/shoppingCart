@@ -8,12 +8,16 @@ export const ProductDetails = ({ currentSelectedPlant }) => {
           <img src={currentSelectedPlant.imageUrl} alt="" />
           <div className="product_description">
             <p className="name">
+              <b>Name:</b>
+              {"    "}
               {currentSelectedPlant.name ? currentSelectedPlant.name : null}
             </p>
-            <p className="price">{currentSelectedPlant.price}</p>
+            <p className="price">
+              <b>Price:</b> £{currentSelectedPlant.price}
+            </p>
             <p className="description">{currentSelectedPlant.description}</p>
             <p className="amount">
-              Amount
+              <b>Amount:</b>
               <div className="buttons">
                 <div
                   onClick={() => {

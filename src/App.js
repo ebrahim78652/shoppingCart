@@ -13,7 +13,7 @@ import { useDetails } from "./Hooks/useDetail";
 
 import { getProducts, getTotal } from "./Util/ProductsSummary";
 import { getTotalNumProducts } from "./Util/Cart";
-
+import { NotFound } from "./Pages/shared/NotFound.js";
 function App() {
   const [allImagesInfo, incrementInStore, decrementInStore] = useImages();
   const [increment, arrIncDecInfo, decrement] = useIncDec(allImagesInfo.length);
@@ -65,6 +65,7 @@ function App() {
           path="details"
           element={<Details currentSelectedPlant={currentSelectedPlant} />}
         ></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </>
   );
