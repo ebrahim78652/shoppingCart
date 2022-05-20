@@ -15,6 +15,7 @@ export const Card = ({
 }) => {
   const navigate = useNavigate();
 
+  //navigating from here to the details page.
   const onPictureClick = () => {
     console.log("picture clicked");
     flowerSelectedByUser({
@@ -24,6 +25,8 @@ export const Card = ({
       imageUrl: imageUrl,
       increment: increment,
       decrement: decrement,
+      incrementInStore: incrementInStore,
+      decrementInStore: decrementInStore,
       quantity: quantity,
     });
     navigate("/details");

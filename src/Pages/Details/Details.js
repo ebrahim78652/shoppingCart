@@ -17,6 +17,7 @@ export const Details = (props) => {
   return (
     <>
       <ProductDetails currentSelectedPlant={props.currentSelectedPlant} />
+
       <div className="navbuttons">
         <div onClick={onContinueClick} className="continue">
           Continue Shopping

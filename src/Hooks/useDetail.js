@@ -16,11 +16,10 @@ export const useDetails = () => {
     imageUrl,
     increment,
     decrement,
+    incrementInStore,
+    decrementInStore,
     quantity,
   }) => {
-    console.log(increment);
-    console.log(decrement);
-    console.log(quantity);
     setCurrentSelectedPlant({
       name: name,
       price: price,
@@ -28,6 +27,8 @@ export const useDetails = () => {
       imageUrl: imageUrl,
       increment: increment,
       decrement: decrement,
+      incrementInStore: incrementInStore,
+      decrementInStore: decrementInStore,
       quantity: quantity,
     });
   };

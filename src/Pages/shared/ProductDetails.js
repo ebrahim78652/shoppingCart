@@ -5,7 +5,7 @@ export const ProductDetails = ({ currentSelectedPlant }) => {
     <>
       <div className="product_details_container">
         <div className="product">
-          <img src="/images/image1.webp" alt="" />
+          <img src={currentSelectedPlant.imageUrl} alt="" />
           <div className="product_description">
             <p className="name">
               {currentSelectedPlant.name ? currentSelectedPlant.name : null}
@@ -18,6 +18,7 @@ export const ProductDetails = ({ currentSelectedPlant }) => {
                 <div
                   onClick={() => {
                     currentSelectedPlant.decrement();
+                    currentSelectedPlant.decrementInStore();
                   }}
                   className="decrement"
                 >
@@ -29,6 +30,7 @@ export const ProductDetails = ({ currentSelectedPlant }) => {
                 <div
                   onClick={() => {
                     currentSelectedPlant.increment();
+                    currentSelectedPlant.incrementInStore();
                   }}
                   className="increment"
                 >
@@ -39,6 +41,7 @@ export const ProductDetails = ({ currentSelectedPlant }) => {
           </div>
         </div>
       </div>
+      <div className="divider"></div>
     </>
   );
 };

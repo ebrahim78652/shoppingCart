@@ -5,16 +5,30 @@ import { Details } from "./Pages/Details/Details.js";
 import { Checkout } from "./Pages/Checkout/Checkout";
 import { Route, Routes, Link, NavLink } from "react-router-dom";
 import { Header } from "./Pages/shared/Header";
+import React, { useState, useEffect } from "react";
 
 import { useIncDec } from "./Hooks/useIncDec";
 import { useImages } from "./Hooks/useImages";
 import { useDetails } from "./Hooks/useDetail";
+
+import { getProducts, getTotal } from "./Util/ProductsSummary";
 
 function App() {
   const [allImagesInfo, incrementInStore, decrementInStore] = useImages();
   const [increment, arrIncDecInfo, decrement] = useIncDec(allImagesInfo.length);
   const [currentSelectedPlant, flowerSelectedByUser] = useDetails();
 
+  /*   useEffect(() => {
+    getProducts(
+      allImagesInfo,
+      arrIncDecInfo,
+      incrementInStore,
+      decrementInStore,
+      increment,
+      decrement
+    );
+  }, [allImagesInfo, arrIncDecInfo]);
+ */
   return (
     <>
       <Header />
@@ -36,7 +50,27 @@ function App() {
             />
           }
         ></Route>
-        <Route path="checkout" element={<Checkout />}></Route>
+        <Route
+          path="checkout"
+          element={
+            <Checkout
+              getProducts={() => {
+                const result = getProducts(
+                  allImagesInfo,
+                  arrIncDecInfo,
+                  incrementInStore,
+                  decrementInStore,
+                  increment,
+                  decrement
+                );
+                return result;
+              }}
+              getTotal={() => {
+                return getTotal(allImagesInfo);
+              }}
+            />
+          }
+        ></Route>
         <Route
           path="details"
           element={<Details currentSelectedPlant={currentSelectedPlant} />}
