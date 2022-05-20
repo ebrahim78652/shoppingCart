@@ -12,26 +12,16 @@ import { useImages } from "./Hooks/useImages";
 import { useDetails } from "./Hooks/useDetail";
 
 import { getProducts, getTotal } from "./Util/ProductsSummary";
+import { getTotalNumProducts } from "./Util/Cart";
 
 function App() {
   const [allImagesInfo, incrementInStore, decrementInStore] = useImages();
   const [increment, arrIncDecInfo, decrement] = useIncDec(allImagesInfo.length);
   const [currentSelectedPlant, flowerSelectedByUser] = useDetails();
 
-  /*   useEffect(() => {
-    getProducts(
-      allImagesInfo,
-      arrIncDecInfo,
-      incrementInStore,
-      decrementInStore,
-      increment,
-      decrement
-    );
-  }, [allImagesInfo, arrIncDecInfo]);
- */
   return (
     <>
-      <Header />
+      <Header getTotalNumProducts={() => getTotalNumProducts(allImagesInfo)} />
 
       <Routes>
         <Route index element={<Homepage />} />
